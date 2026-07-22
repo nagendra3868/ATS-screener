@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart ATS Resume Keyword Screener</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-file-circle-check"></i>
+            <span>Smart ATS</span>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#upload">Upload</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+
+        <button id="themeToggle" class="theme-toggle">
+    <i class="fa-solid fa-moon"></i>
+    </button>
+    </nav>
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-text">
+
+            <h1>Smart ATS Resume Keyword Screener</h1>
+
+            <p>
+                Analyze resumes using a keyword-based Applicant Tracking
+                System (ATS). Upload a resume, compare it against required
+                technical skills, and instantly receive an ATS compatibility
+                score.
+            </p>
+
+            <a href="#upload" class="hero-btn">
+                Analyze Resume
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img src="images/hero.jpeg" alt="ATS Illustration">
+
+        </div>
+
+    </section>
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <h2>Project Features</h2>
+
+        <div class="feature-container">
+
+            <div class="card">
+
+                <i class="fa-solid fa-file-arrow-up"></i>
+
+                <h3>Upload Resume</h3>
+
+                <p>
+                    Upload a TXT resume for instant keyword analysis.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-magnifying-glass-chart"></i>
+
+                <h3>Keyword Matching</h3>
+
+                <p>
+                    Compare resume content with predefined technical keywords.
+                </p>
+
+            </div>
+
+            <div class="card">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+                <h3>ATS Score</h3>
+
+                <p>
+                    Receive a percentage score and resume rating.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= UPLOAD ================= -->
+
+
+<section class="upload-section" id="upload">
+
+    <h2>Upload Resume</h2>
+
+    <div class="upload-box">
+
+        <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+        <h3>Drag & Drop Your Resume</h3>
+
+        <p>
+            Supported formats: PDF, DOC, DOCX, TXT
+        </p>
+
+        <input
+            type="file"
+            id="resumeFile"
+            accept=".pdf,.doc,.docx,.txt"
+            hidden
+        >
+
+        <button class="upload-btn" id="chooseBtn">
+            <i class="fa-solid fa-folder-open"></i>
+            Choose Resume
+        </button>
+
+        <div class="file-info">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+            <span id="fileName">
+                No file selected
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+   
+    <!-- ================= ROLE ================= -->
+
+    <section class="role-section">
+
+        <h2>Select Job Role</h2>
+
+        <select id="roleSelect">
+
+            <option value="">Choose Role</option>
+
+            <option>Python Developer</option>
+
+            <option>Data Analyst</option>
+
+            <option>Java Developer</option>
+
+            <option>Full Stack Developer</option>
+
+            <option>Automation Tester</option>
+
+        </select>
+
+        <button id="analyzeBtn">
+            Analyze Resume
+        </button>
+
+    </section>
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section class="dashboard" id="dashboard">
+
+        <h2>Analysis Dashboard</h2>
+
+        <div class="dashboard-container">
+
+            <!-- Score -->
+
+            <div class="score-card">
+
+                <div class="circle">
+
+                    <h1 id="scoreValue">
+                        0%
+                    </h1>
+
+                </div>
+
+                <h3 id="rating">
+                    Waiting...
+                </h3>
+
+            </div>
+
+            <!-- Keywords -->
+
+            <div class="keyword-card">
+
+                <h3>
+                    Matched Keywords
+                </h3>
+
+                <ul id="matchedList">
+
+                    <li>None</li>
+
+                </ul>
+
+            </div>
+
+            <!-- Missing -->
+
+            <div class="keyword-card">
+
+                <h3>
+                    Missing Keywords
+                </h3>
+
+                <ul id="missingList">
+
+                    <li>None</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+
+    <section class="about" id="about">
+
+        <h2>About Project</h2>
+
+        <p>
+
+            Smart ATS Resume Keyword Screener is a lightweight Applicant
+            Tracking System built using HTML, CSS, JavaScript, and Python.
+            It reads resume text, compares it with predefined technical
+            keywords stored in CSV files, calculates an ATS match score,
+            and classifies the resume as a Strong Match, Partial Match,
+            or Needs Review.
+
+        </p>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Smart ATS Resume Keyword Screener | Built with HTML, CSS,
+            JavaScript & Python
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+</html>
